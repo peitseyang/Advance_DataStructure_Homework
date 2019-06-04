@@ -1,6 +1,6 @@
 class TrieNode: 
     def __init__(self): 
-        self.child = [None]*26
+        self.child = [None]*1000
         self.isEndOfWord = False
   
 class Trie: 
@@ -10,13 +10,10 @@ class Trie:
     def getNode(self): 
         return TrieNode() 
   
-    def char2Index(self, ch): 
-        return ord(ch)-ord('a') 
-  
     def insert(self, key):
         leaf = self.root
         for i in range(len(key)):
-            idx = self.char2Index(key[i])
+            idx = ord(key[i])
             if not leaf.child[idx]: 
                 leaf.child[idx] = self.getNode() 
             leaf = leaf.child[idx] 
@@ -25,7 +22,7 @@ class Trie:
     def search(self, key):
         leaf = self.root
         for i in range(len(key)): 
-            idx = self.char2Index(key[i]) 
+            idx = ord(key[i]) 
             if not leaf.child[idx]: 
                 return False
             leaf = leaf.child[idx]
@@ -42,8 +39,6 @@ if __name__ == '__main__':
     # insert words
     for line in open(input_dir, 'r').readlines():
         key = line.strip()
-        if key == 'April' or key == 'December' or key == 'February' or key == 'Friday':
-            continue
         dictionary.insert(key)
     
     # doc
@@ -52,8 +47,6 @@ if __name__ == '__main__':
     # search Compound Words
     for line in open(input_dir, 'r').readlines():
         word = line.strip()
-        if word == 'April' or word == 'December' or word == 'February' or word == 'Friday':
-            continue
         for i in range(1, len(word)):
             sub_first = word[0:i]
             sub_second = word[i:len(word)]
