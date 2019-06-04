@@ -67,7 +67,7 @@ if __name__ == '__main__':
     else:
         count = 0
         for i in range(len(result)):
-            word = ground_truth[i].strip()
+            word = int(ground_truth[i].strip())
             if result[i] == word:
                 count += 1
             else:
