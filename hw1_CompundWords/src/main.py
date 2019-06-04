@@ -1,5 +1,3 @@
-import sys
-
 class TrieNode: 
     def __init__(self): 
         self.child = [None]*26
@@ -77,3 +75,11 @@ if __name__ == '__main__':
             print('Match output file')
         else:
             print('Some error in result')
+
+    # make output file
+    filename = ''.join(['./', 'output.txt'])
+    with open(filename, 'w') as f:
+        for i in range(len(result)-1):
+            f.write("%s\n" % result[i])
+        f.write("%s" % result[len(result)-1])
+    print('Output predict file...')
