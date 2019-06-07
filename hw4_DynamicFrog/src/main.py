@@ -80,7 +80,7 @@ if __name__ == '__main__':
             print(error)
 
     # make output file
-    filename = ''.join(['./', 'output.txt'])
+    filename = ''.join(['../', 'Dynamic Frog.out'])
     with open(filename, 'w') as f:
         for i in range(len(result)-1):
             f.write('Case %d: %d\n' % (i+1, result[i]))
