@@ -115,7 +115,7 @@ if __name__ == '__main__':
             print(error)
 
     # make output file
-    filename = ''.join(['./', 'output.txt'])
+    filename = ''.join(['../', 'Eat or Not to Eat.out'])
     with open(filename, 'w') as f:
         for i in range(len(result)-1):
             f.write("%s %s\n" % (result[i][0], result[i][1]))
