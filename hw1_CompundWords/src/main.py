@@ -70,7 +70,7 @@ if __name__ == '__main__':
             print('Some error in result')
 
     # make output file
-    filename = ''.join(['./', 'output.txt'])
+    filename = ''.join(['../', 'Compound Words.out'])
     with open(filename, 'w') as f:
         for i in range(len(result)-1):
             f.write("%s\n" % result[i])
